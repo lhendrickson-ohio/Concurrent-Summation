@@ -44,7 +44,7 @@ func main(){
 	go add(data, 1001, 2000, c)
 	go add(data, 2001, 3000, c)
 	go add(data, 3001, 4000, c)
-	go add(data, 4001, 5000, c)
+	go add(data, 4001, 4999, c)
 
 	sum1= <- c
 	sum2= <- c
@@ -62,7 +62,7 @@ func add(data []int, start int, end int, c chan int) {
 	var added int
 	added = 0
 
-	for i:=start; i<end; i++{
+	for i:=start; i<=end; i++{
 		added = added + data[i]
 
 	}
